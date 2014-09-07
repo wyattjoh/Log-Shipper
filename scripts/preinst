@@ -1,0 +1,25 @@
+#!/bin/sh
+# preinst script for log-shipper
+
+
+set -e
+
+VER="0.10.28"
+ARCH="x86"
+if [ `arch | grep 64` ] ; then
+	ARCH="x64"
+fi
+
+# Test if node is already installed
+if [ ! -f /usr/local/bin/node ] ; then
+	cd /tmp
+	curl -O "http://nodejs.org/dist/v${VER}/node-v${VER}-linux-${ARCH}.tar.gz"
+	rm -rf /tmp/node-v${VER}-linux-${ARCH}
+	tar xf node-v${VER}-linux-${ARCH}.tar.gz -C /tmp/
+	cp -a /tmp/node-v${VER}-linux-${ARCH}/* /usr/local/
+fi
+
+# Add log-shipper user
+useradd log-shipper -g adm
+
+exit 0

@@ -1,0 +1,11 @@
+#!/bin/sh
+# prerm script for log-shipper
+
+set -e
+
+# Stop any running process
+stop log-shipper | true
+userdel -f log-shipper
+
+# Exit cleanly
+exit 0

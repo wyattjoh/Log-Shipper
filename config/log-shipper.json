@@ -1,0 +1,18 @@
+{
+  "redis": {
+    "host": "YOUR REDIS HOST",
+    "port": 6379,
+    "key": "logstash:redis",
+    "auth": "YOUR AUTH KEY"
+  },
+  "files": [
+    {
+      "paths": [ "/var/log/syslog", "/var/log/auth.log" ],
+      "type": "syslog"
+    },
+    {
+      "paths": [ "/var/log/nginx/*.log" ],
+      "type": "nginx"
+    }
+  ]
+}

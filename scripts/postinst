@@ -1,0 +1,14 @@
+#!/bin/sh
+# prerm script for log-shipper
+
+set -e
+
+if [ ! -f /etc/log-shipper/log-shipper.json ] ; then
+	cp /etc/log-shipper/log-shipper.example.json /etc/log-shipper/log-shipper.json
+	echo "Adding default config"
+fi
+
+start log-shipper
+
+# Exit cleanly
+exit 0

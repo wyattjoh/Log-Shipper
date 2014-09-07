@@ -1,0 +1,23 @@
+{
+  "name": "BPLogShipper",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wyatt Johnson",
+  "license": "GPL3",
+  "dependencies": {
+    "glob": "^4.0.2",
+    "log4node": "^0.1.6",
+    "moment": "^2.7.0",
+    "optimist": "^0.6.1",
+    "redis": "^0.12.1",
+    "tail": "^0.3.5",
+    "underscore": "^1.6.0"
+  },
+  "devDependencies": {
+    "hiredis": "^0.1.17"
+  }
+}
